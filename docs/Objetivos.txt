@@ -1,0 +1,7 @@
+# OBJETIVOS DEL PROYECTO
+(Incluye aquí el contenido exacto del archivo Objetivos.txt que define el alcance del proyecto)
+- Objetivo general
+- Objetivos específicos
+- Alcance (In/Out)
+- KPIs y métricas
+- Hitos y cronograma

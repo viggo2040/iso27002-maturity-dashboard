@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ISO 27002 Maturity Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.min.js"></script>
+</head>
+<body>
+<header class="gr-header">
+  <div class="gr-header-inner">
+    <div class="gr-title">ISO 27002 Maturity Dashboard</div>
+    <nav class="gr-nav"><a href="upload.html">Subir CSV</a> <a href="#" id="reload">Recargar</a></nav>
+  </div>
+</header>
+<div class="gradio-container">
+  <div class="gr-panel"><h2>Indicadores (KPIs)</h2><div class="kpis" id="kpis"></div></div>
+  <div class="gr-panel"><h2>Madurez promedio por dominio</h2><button class="gr-button" id="btn-export">Exportar CSV</button><div id="p5-holder"></div><p>Fuente: <span id="source"></span></p></div>
+  <div class="gr-panel table"><h2>Tabla resumen</h2><table id="tbl"><thead><tr><th>Dominio</th><th>Madurez</th></tr></thead><tbody></tbody></table></div>
+  <div class="gr-footer">© ISO 27002 Dashboard — Gradio Dark Look</div>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Subir CSV — ISO 27002 Dashboard</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+</head>
+<body>
+<header class="gr-header">
+  <div class="gr-header-inner">
+    <div class="gr-title">Subir CSV</div>
+    <nav class="gr-nav"><a href="index.html">Dashboard</a></nav>
+  </div>
+</header>
+<div class="gradio-container">
+  <div class="gr-panel">
+    <h2>Cargar nuevo dataset</h2>
+    <p>Columnas requeridas: <code>Dominio_ISO27002, Nro_Control, Nombre_Control, Nivel_SCF, Valor_Madurez</code></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin:10px 0;">
+      <input class="gr-input" type="file" id="file" accept=".csv" />
+      <input class="gr-input" type="password" id="password" placeholder="Contraseña de carga" />
+      <button class="gr-button" id="btn-upload">Subir y reemplazar datos</button>
+    </div>
+    <div id="msg" class="kpi"></div>
+  </div>
+</div>
+<script>
+document.getElementById('btn-upload').addEventListener('click', async () => {
+  const file = document.getElementById('file').files[0];
+  const pwd  = document.getElementById('password').value.trim();
+  const msg  = document.getElementById('msg'); msg.textContent = '';
+  if(!file){ msg.textContent = 'Selecciona un CSV.'; return; }
+  if(!pwd){  msg.textContent = 'Ingresa la contraseña.'; return; }
+  const fd=new FormData(); fd.append('file',file); fd.append('password',pwd);
+  const res=await fetch('/api/upload.php',{method:'POST',body:fd});
+  const txt=await res.text();
+  try{ const data=JSON.parse(txt); msg.textContent = data.ok ? 'Archivo subido correctamente.' : ('Error: ' + (data.error || 'desconocido')); }
+  catch(e){ msg.textContent = 'Error inesperado: ' + txt; }
+});
+</script>
+</body>
+</html>
