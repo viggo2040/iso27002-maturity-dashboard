@@ -20,19 +20,6 @@ data/              # CSV (no se versiona; se crea en servidor)
 docs/Objetivos.txt # copia de objetivos del proyecto
 ```
 
-## Deploy en Hostinger
-1. Sube todo a `public_html/` respetando estructura.
-2. Edita `api/config.php`:
-   ```php
-   'data_file' => __DIR__ . '/../data/data.csv',
-   'auth_password' => 'CAMBIA_ESTA_CONTRASEÑA',
-   ```
-3. Asegura permisos de escritura en `data/`.
-4. Verifica:
-   - `https://TU_DOMINIO/api/summary.php` → JSON
-   - `https://TU_DOMINIO/public/upload.html` → subir CSV
-   - `https://TU_DOMINIO/public/index.html` → dashboard
-
 ## Contribución
 Ver [CONTRIBUTING.md](CONTRIBUTING.md) y [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
