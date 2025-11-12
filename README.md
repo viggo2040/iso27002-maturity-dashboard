@@ -4,8 +4,7 @@
 [![Issues](https://img.shields.io/github/issues/viggo2040/iso27002-maturity-dashboard)](https://github.com/viggo2040/iso27002-maturity-dashboard/issues)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-Dashboard de madurez ISO 27002 con **PHP + JavaScript + p5.js** y **look Gradio Dark**.
-Pensado para **Hostinger** (hosting compartido, sin Composer).
+Dashboard de madurez ISO 27002 con **PHP + JavaScript + p5.js**.
 
 ## Funcionalidad
 - **Subida de CSV** (`/public/upload.html`) → guarda en `data/data.csv` (requiere contraseña).
